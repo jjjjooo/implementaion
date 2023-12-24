@@ -1,26 +1,31 @@
+package basic_grahp.디피.설탕배달_2839;
+
 import java.io.*;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class MainForm {
+public class Main {
     static FastReader sc = new FastReader();
-
     public static void main(String[] args) throws IOException {
-        int n = sc.nextInt();
-        int[] arr = new int[n];
-        int max = Integer.MIN_VALUE;
-        for(int i = 0; i<n; i++){
-            arr[i] = sc.nextInt();
-            if(arr[i]> max) max = arr[i];
+        /**
+         * DP 사용하지 않음
+         */
+        int N = sc.nextInt();
+        int n = N;
+        int cnt = 0;
+        if(n % 5 == 0) {
+            cnt = n / 5;
+        } else {
+            while (n >= 3) {
+                n -= 3;
+                cnt++;
+                if (n % 5 == 0) {
+                    cnt += (n / 5);
+                    break;
+                }
+            }
         }
-
-        double jojak = (double) max*0.01;
-
-        double jojakSum = 0;
-        for(int i = 0; i<n; i++){
-            jojakSum += (double) arr[i] /jojak;
-        }
-        System.out.println(jojakSum /(double)n);
+        if(0<n && n<3) System.out.println(-1);
+        else System.out.println(cnt);
     }
 
     static class FastReader {
