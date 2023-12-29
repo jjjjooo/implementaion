@@ -1,4 +1,4 @@
-package basic_grahp.디피.설탕배달_2839;
+package basic_grahp.디피;
 
 import java.io.*;
 import java.util.StringTokenizer;
