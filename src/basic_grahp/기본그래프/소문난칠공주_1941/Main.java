@@ -49,7 +49,6 @@ public class Main {
             if (sCnt >= 4) {
                     if (dfs(seven[0]) == 7) {
                     ans++;
-
                 }
                 for (int i = 0; i < 25; i++) {
                     if(visited[i]) visited[i] = false;
